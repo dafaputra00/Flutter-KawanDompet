@@ -5,7 +5,6 @@ import 'package:budget_ui/pages/settings.dart';
 import 'package:budget_ui/pages/wants.dart';
 import 'package:budget_ui/themes/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
 class RootApp extends StatefulWidget {
@@ -72,10 +71,10 @@ class _RootAppState extends State<RootApp> {
 
   Widget getFooter() {
     List<IconData> iconItems = [
-      Ionicons.md_home,
-      Ionicons.md_pricetags,
-      Ionicons.md_wallet,
-      Ionicons.md_settings,
+      Icons.home,
+      Icons.local_offer,
+      Icons.wallet_giftcard,
+      Icons.settings,
     ];
 
     return AnimatedBottomNavigationBar(

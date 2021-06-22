@@ -1,11 +1,11 @@
 class CardModel {
-  String user;
-  String cardNumber;
-  String cardExpired;
-  String cardType;
-  int cardBackground;
-  String cardElementTop;
-  String cardElementBottom;
+  String? user;
+  String? cardNumber;
+  String? cardExpired;
+  String? cardType;
+  int? cardBackground;
+  String? cardElementTop;
+  String? cardElementBottom;
 
   CardModel(this.user, this.cardNumber, this.cardExpired, this.cardType,
       this.cardBackground, this.cardElementTop, this.cardElementBottom);
@@ -14,13 +14,13 @@ class CardModel {
 List<CardModel> cards = cardData
     .map(
       (item) => CardModel(
-        item['user'],
-        item['cardNumber'],
-        item['cardExpired'],
-        item['cardType'],
-        item['cardBackground'],
-        item['cardElementTop'],
-        item['cardElementBottom'],
+        item['user'] as String?,
+        item['cardNumber'] as String?,
+        item['cardExpired'] as String?,
+        item['cardType'] as String?,
+        item['cardBackground'] as int?,
+        item['cardElementTop'] as String?,
+        item['cardElementBottom'] as String?,
       ),
     )
     .toList();
