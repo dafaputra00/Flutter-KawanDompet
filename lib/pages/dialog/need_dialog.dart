@@ -46,7 +46,7 @@ class _NeedDialogState extends State<NeedDialog> {
   @override
   Widget build(BuildContext context) {
     final isEditing = widget.transaction != null;
-    final title = isEditing ? 'Edit Transaction' : 'Add Transaction';
+    final title = isEditing ? 'Edit Transaksi' : 'Tambah Transaksi';
 
     return AlertDialog(
       title: Text(title),
@@ -77,20 +77,20 @@ class _NeedDialogState extends State<NeedDialog> {
         controller: nameController,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
-          hintText: 'Enter Name',
+          hintText: 'Nama Transaksi',
         ),
         validator: (name) =>
-            name != null && name.isEmpty ? 'Enter a name' : null,
+            name != null && name.isEmpty ? 'Masukan Nama Transaksi' : null,
       );
 
   Widget buildAmount() => TextFormField(
         decoration: InputDecoration(
           border: OutlineInputBorder(),
-          hintText: 'Enter Amount',
+          hintText: 'Jumlah Transaksi',
         ),
         keyboardType: TextInputType.number,
         validator: (amount) => amount != null && double.tryParse(amount) == null
-            ? 'Enter a valid number'
+            ? 'Masukan Angka yang Valid'
             : null,
         controller: amountController,
       );
@@ -98,13 +98,13 @@ class _NeedDialogState extends State<NeedDialog> {
   Widget buildRadioButtons() => Column(
         children: [
           RadioListTile<bool>(
-            title: Text('Expense'),
+            title: Text('Pengeluaran'),
             value: true,
             groupValue: isExpense,
             onChanged: (value) => setState(() => isExpense = value!),
           ),
           RadioListTile<bool>(
-            title: Text('Income'),
+            title: Text('Pemasukan'),
             value: false,
             groupValue: isExpense,
             onChanged: (value) => setState(() => isExpense = value!),
@@ -113,12 +113,12 @@ class _NeedDialogState extends State<NeedDialog> {
       );
 
   Widget buildCancelButton(BuildContext context) => TextButton(
-        child: Text('Cancel'),
+        child: Text('Batal'),
         onPressed: () => Navigator.of(context).pop(),
       );
 
   Widget buildAddButton(BuildContext context, {required bool isEditing}) {
-    final text = isEditing ? 'Save' : 'Add';
+    final text = isEditing ? 'Simpan' : 'Tambah';
 
     return TextButton(
       child: Text(text),

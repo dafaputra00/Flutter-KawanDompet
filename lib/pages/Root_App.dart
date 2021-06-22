@@ -50,7 +50,7 @@ class _RootAppState extends State<RootApp> {
       body: getBody(),
       bottomNavigationBar: getFooter(),
       floatingActionButton: FloatingActionButton(
-          onPressed: () => _showSettingsPanel(),
+          onPressed: () {},
           child: Icon(
             Icons.mood,
             size: 25,

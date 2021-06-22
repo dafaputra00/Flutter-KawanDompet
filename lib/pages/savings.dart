@@ -52,8 +52,8 @@ class _SavingPageState extends State<SavingPage> {
           ? previousValue - transaction.amount!
           : previousValue + transaction.amount!,
     );
-    final newExpenseString = '\$${netExpense.toStringAsFixed(2)}';
-    final color = netExpense > 0 ? Colors.green : Colors.red;
+    final newExpenseString = '\Rp${netExpense.toStringAsFixed(2)}';
+    final color = netExpense > 0 ? Colors.greenAccent : Colors.redAccent;
 
     return Container(
       child: ListView(
@@ -73,7 +73,7 @@ class _SavingPageState extends State<SavingPage> {
                       color: kBlackColor),
                 ),
                 Text(
-                  '[NAMA]',
+                  'Fulan bin Fulan',
                   style: GoogleFonts.inter(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
@@ -111,8 +111,8 @@ class _SavingPageState extends State<SavingPage> {
                         child: Text(
                           'Dana : $newExpenseString',
                           style: GoogleFonts.inter(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
                               color: color),
                         ),
                       ),
@@ -134,18 +134,6 @@ class _SavingPageState extends State<SavingPage> {
               ),
             ),
           ),
-
-          ListView.builder(
-            itemCount: TransaksiSavings.length,
-            padding: EdgeInsets.only(left: 16, right: 16),
-            shrinkWrap: true,
-            itemBuilder: (BuildContext context, int index) {
-              final transaction = TransaksiSavings[index];
-
-              return buildTransaction(context, transaction);
-            },
-          ),
-
           TextButton.icon(
             icon: Icon(Icons.add),
             label: Text('Tambah Transaksi'),
@@ -155,6 +143,18 @@ class _SavingPageState extends State<SavingPage> {
                 onClickedDone: addTransaction,
               ),
             ),
+          ),
+
+          ListView.builder(
+            itemCount: TransaksiSavings.length,
+            padding: EdgeInsets.only(left: 16, right: 16),
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (BuildContext context, int index) {
+              final transaction = TransaksiSavings[index];
+
+              return buildTransaction(context, transaction);
+            },
           ),
         ],
       ),
