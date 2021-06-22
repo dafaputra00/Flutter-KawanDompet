@@ -47,19 +47,19 @@ class _RootAppState extends State<RootApp> {
     }
 
     return Scaffold(
-        body: getBody(),
-        bottomNavigationBar: getFooter(),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () => _showSettingsPanel(),
-            child: Icon(
-              Icons.add,
-              size: 25,
-            ),
-            backgroundColor: Colors.blueAccent
-            //params
-            ),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.centerDocked);
+      body: getBody(),
+      bottomNavigationBar: getFooter(),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () => _showSettingsPanel(),
+          child: Icon(
+            Icons.mood,
+            size: 25,
+          ),
+          backgroundColor: Colors.blueAccent
+          //params
+          ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
   }
 
   Widget getBody() {

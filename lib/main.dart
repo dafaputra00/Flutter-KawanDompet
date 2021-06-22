@@ -12,6 +12,12 @@ Future main() async {
   Hive.registerAdapter(transaksiNeedsAdapter());
   await Hive.openBox<transaksiNeeds>('TransaksiNeeds');
 
+  Hive.registerAdapter(transaksiWantsAdapter());
+  await Hive.openBox<transaksiWants>('TransaksiWants');
+
+  Hive.registerAdapter(transaksiSavingsAdapter());
+  await Hive.openBox<transaksiSavings>('TransaksiSavings');
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: RootApp(),
